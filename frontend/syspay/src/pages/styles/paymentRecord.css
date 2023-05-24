@@ -1,0 +1,28 @@
+.payment-cards-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 5rem;
+  }
+  .payment-card {
+    width: 400px;
+    height: auto; /* Ajusta el ancho de la tarjeta según tus necesidades */
+    margin-right: 10px; /* Margen entre tarjetas */
+  }
+  
+  .payment-field {
+    width: 100%; /* Ajusta el ancho de los campos de texto según tus necesidades */
+  }
+  .payment-navigation{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.5rem;
+    justify-content: center;
+  }
+  .button-navigation{
+   margin-left: 1rem;
+  }
+  .payment-record-container {
+    min-height: 100vh; /* Altura mínima de la página para que el color de fondo se extienda */
+  }
+  
