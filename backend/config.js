@@ -13,5 +13,6 @@ export default {
   PLACE_PORT: process.env.PLACE_PORT || 8083,
   STORE_PORT: process.env.STORE_PORT || 8084,
   AWS_PORT: process.env.AWS_PORT || 8085,
+  PAGOS_PORT: process.env.PAGOS_PORT || 8086,
   MYSQL_DB_PORT: process.env.MYSQL_DB_PORT || 3306,
 };

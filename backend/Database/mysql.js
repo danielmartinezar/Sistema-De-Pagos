@@ -97,4 +97,4 @@ function joinQuery(table, id, query) {
   });
 }
 
-export default { list, get, remove, upsert, query, joinQuery };
+export default { list, get, remove, upsert, query, joinQuery};
