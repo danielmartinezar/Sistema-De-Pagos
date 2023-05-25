@@ -5,9 +5,9 @@ import { nanoid } from "nanoid";
 import axios from "axios";
 import db from "../../Database/mysql.js";
 
-let URL_DB_SERVICE = `http://localhost:${config.STORE_PORT}`;
+let URL_DB_SERVICE = `http://localhost:${config.MYSQL_DB_PORT}`;
 
-export default function controller() {
+export default async function controller() {
   async function list() {
     return await axios.get(URL_DB_SERVICE + `/${TABLE}`);
   }
@@ -16,8 +16,9 @@ export default function controller() {
   }
   async function insert(body) {
     console.log(body);
-    const id = nanoid();
-    const pago = { id, ...body };
+    const id_trans = nanoid();
+    const pago = { id_trans, ...body }; 
+    console.log(pago);
     await axios.post(URL_DB_SERVICE + `/${TABLE}`, pago);
 
     // await axios.post(
@@ -34,7 +35,7 @@ export default function controller() {
     //     });
     //   })
     // );
-    return id;
+    return id_trans;
   }
 
   return { list, get, insert };

@@ -33,10 +33,9 @@ function get(req, res, next) {
     });
 }
 function insert(req, res, next) {
-  res.send("insert success");
   console.log(req.body);
-    const Transaccion = controller.insert(req.body);
-    res.send({ Transaccion });
+  const id_trans = controller.insert(req.body);
+  res.send({ id_trans });
 }
 function update(req, res, next) {
   controller
@@ -51,6 +50,17 @@ function update(req, res, next) {
 function del(req, res, next) {
   controller
     .del(req.params.id)
+    .then((resp) => {
+      response.success(req, res, resp.data.body, 201);
+    })
+    .catch((err) => {
+      response.error(req, res, err.message, 500);
+    });
+}
+
+function verificarSaldo(req, res, next) {
+  controller
+    .get(req.body)
     .then((resp) => {
       response.success(req, res, resp.data.body, 201);
     })
